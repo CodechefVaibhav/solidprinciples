@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author vaibhav.kashyap
- * */
+ */
 
 @Service("RefactoredInkjet")
 public class InkjetPrinterService implements Printable {

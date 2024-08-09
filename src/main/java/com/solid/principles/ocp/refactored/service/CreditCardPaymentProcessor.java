@@ -2,6 +2,10 @@ package com.solid.principles.ocp.refactored.service;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * @author vaibhav.kashyap
+ */
+
 @Service("CREDIT_CARD")
 public class CreditCardPaymentProcessor implements PaymentProcessor {
 

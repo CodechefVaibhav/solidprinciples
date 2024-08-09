@@ -2,6 +2,10 @@ package com.solid.principles.srp.refactored.service;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * @author vaibhav.kashyap
+ */
+
 @Service
 public class EmailService {
 

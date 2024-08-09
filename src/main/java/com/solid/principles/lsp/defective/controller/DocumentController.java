@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.solid.principles.lsp.defective.service.TextDocumentService;
 import com.solid.principles.lsp.defective.service.ReadOnlyDocumentService;
 
+/**
+ * @author vaibhav.kashyap
+ */
+
 @RestController
 @RequestMapping("/defective/document")
 public class DocumentController {
