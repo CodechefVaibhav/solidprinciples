@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
  * @author vaibhav.kashyap
  */
 
-@Service("RefactoredPhoto")
+@Service("RefactoredPhotocopier")
 public class PhotocopierService implements Printable, Scannable {
 
 	@Override
