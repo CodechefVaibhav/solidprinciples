@@ -22,7 +22,6 @@ public class PrinterController {
 	private final Printable photocopierService;
 	private final Scannable scannablePhotocopierService;
 
-	@Autowired
 	public PrinterController(@Qualifier("RefactoredInkjet") Printable inkjetPrinterService,
 			@Qualifier("RefactoredPhotocopier") Printable photocopierService, Scannable scannablePhotocopierService) {
 		this.inkjetPrinterService = inkjetPrinterService;
