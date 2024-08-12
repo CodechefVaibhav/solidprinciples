@@ -20,7 +20,6 @@ public class PrinterController {
 	private final InkjetPrinterService inkjetPrinterService;
 	private final PhotocopierService photocopierService;
 
-	@Autowired
 	public PrinterController(InkjetPrinterService inkjetPrinterService, PhotocopierService photocopierService) {
 		this.inkjetPrinterService = inkjetPrinterService;
 		this.photocopierService = photocopierService;
