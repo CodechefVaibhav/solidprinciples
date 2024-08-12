@@ -13,7 +13,6 @@ public class NotificationService {
 	private final EmailNotificationService emailNotificationService;
 	private final SMSNotificationService smsNotificationService;
 
-	@Autowired
 	public NotificationService(EmailNotificationService emailNotificationService,
 			SMSNotificationService smsNotificationService) {
 		this.emailNotificationService = emailNotificationService;
