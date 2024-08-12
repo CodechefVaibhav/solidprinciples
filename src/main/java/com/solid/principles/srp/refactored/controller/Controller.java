@@ -23,7 +23,6 @@ public class Controller {
 	private final UserValidatorService userValidatorService;
 	private final EmailService emailService;
 
-	@Autowired
 	public Controller(UserService userService, UserValidatorService userValidatorService, EmailService emailService) {
 		this.userService = userService;
 		this.userValidatorService = userValidatorService;
