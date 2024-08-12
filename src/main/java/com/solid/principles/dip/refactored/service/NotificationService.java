@@ -14,7 +14,6 @@ public class NotificationService {
 
 	private final Map<String, NotificationSender> notificationSenders;
 
-	@Autowired
 	public NotificationService(Map<String, NotificationSender> notificationSenders) {
 		this.notificationSenders = notificationSenders;
 	}
