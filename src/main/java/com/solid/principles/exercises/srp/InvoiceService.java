@@ -3,7 +3,7 @@ package com.solid.principles.exercises.srp;
 import org.springframework.stereotype.Service;
 
 /**
- * @author vaibhav.kashyap
+ * @author praveen.krishna
  */
 
 @Service

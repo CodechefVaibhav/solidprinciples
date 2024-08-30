@@ -1,11 +1,12 @@
 package com.solid.principles.exercises.dip;
 
 /**
- * @author vaibhav.kashyap
+ * @author praveen.krishna
  */
 
-public class PDFExporter {
-
+public class PDFExporter implements  FileExporterInterface{
+    
+	@Override
 	public void export(String data) {
 		System.out.println("Exporting report to PDF: " + data);
 	}

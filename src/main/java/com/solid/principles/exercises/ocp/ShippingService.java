@@ -3,18 +3,14 @@ package com.solid.principles.exercises.ocp;
 import org.springframework.stereotype.Service;
 
 /**
- * @author vaibhav.kashyap
+ * @author praveen.krishna
  */
 
 @Service
 public class ShippingService {
 
     public double calculateShippingCost(String method, double weight) {
-        if ("STANDARD".equalsIgnoreCase(method)) {
-            return weight * 1.0;
-        } else if ("EXPRESS".equalsIgnoreCase(method)) {
-            return weight * 2.0;
-        }
-        return 0;
+        CostMangerInterface costMangerInterface =  CostCalculateFactory.createCostManager(method);
+        return costMangerInterface.calculateCost(weight);
     }
 }

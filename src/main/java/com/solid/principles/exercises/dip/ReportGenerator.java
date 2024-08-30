@@ -1,18 +1,18 @@
 package com.solid.principles.exercises.dip;
 
 /**
- * @author vaibhav.kashyap
+ * @author praveen.krishna
  */
 
 public class ReportGenerator {
 
-	private final PDFExporter pdfExporter;
+	private final FileExporterInterface fileExporter;
 
-	public ReportGenerator() {
-		this.pdfExporter = new PDFExporter();
+	public ReportGenerator(String fileType) {
+		this.fileExporter = FactoryExportor.createExporter(fileType);
 	}
 
 	public void generateReport(String data) {
-		pdfExporter.export(data);
+		fileExporter.export(data);
 	}
 }
