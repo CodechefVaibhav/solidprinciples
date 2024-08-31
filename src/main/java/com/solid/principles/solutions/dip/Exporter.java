@@ -1,4 +1,4 @@
-package com.solid.principles.exercises.dip;
+package com.solid.principles.solutions.dip;
 
 public interface Exporter {
 

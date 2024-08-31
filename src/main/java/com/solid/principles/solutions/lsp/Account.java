@@ -1,4 +1,4 @@
-package com.solid.principles.exercises.lsp;
+package com.solid.principles.solutions.lsp;
 
 public interface Account {
 

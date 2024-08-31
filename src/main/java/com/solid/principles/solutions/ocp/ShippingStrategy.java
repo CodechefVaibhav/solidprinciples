@@ -1,4 +1,4 @@
-package com.solid.principles.exercises.ocp;
+package com.solid.principles.solutions.ocp;
 
 public interface ShippingStrategy {
 

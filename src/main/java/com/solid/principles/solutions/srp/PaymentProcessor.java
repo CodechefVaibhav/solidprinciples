@@ -1,4 +1,4 @@
-package com.solid.principles.exercises.srp;
+package com.solid.principles.solutions.srp;
 
 import org.springframework.stereotype.Service;
 

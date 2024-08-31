@@ -1,4 +1,4 @@
-package com.solid.principles.exercises.isp;
+package com.solid.principles.solutions.isp;
 
 /**
  * @author vaibhav.kashyap

@@ -1,4 +1,4 @@
-package com.solid.principles.exercises.ocp;
+package com.solid.principles.solutions.ocp;
 
 import org.springframework.stereotype.Service;
 
