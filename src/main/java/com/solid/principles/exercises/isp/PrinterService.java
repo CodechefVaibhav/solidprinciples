@@ -1,6 +1,6 @@
 package com.solid.principles.exercises.isp;
 
-public interface PrinterInterface {
+public interface PrinterService {
  
     void print(String document);
     

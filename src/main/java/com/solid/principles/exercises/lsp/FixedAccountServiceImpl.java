@@ -1,14 +1,17 @@
 package com.solid.principles.exercises.lsp;
 
+import org.springframework.stereotype.Service;
+
 /**
  * @author praveen.krishna
  */
 
-public class BankAccountImpl implements BankAccountInterface {
+@Service
+public class FixedAccountServiceImpl implements BankAccountService {
 	protected double balance;
 
-	public BankAccountImpl(double balance) {
-		this.balance = balance;
+	public FixedAccountServiceImpl(double initialBalance) {
+		this.balance = initialBalance;
 	}
 
 	@Override
@@ -17,12 +20,8 @@ public class BankAccountImpl implements BankAccountInterface {
 	}
 
 	@Override
-	public void withdraw(double amount) {
-		balance -= amount;
-	}
-
-	@Override
 	public double getBalance() {
 		return balance;
 	}
+
 }

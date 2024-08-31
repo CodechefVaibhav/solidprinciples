@@ -1,6 +1,6 @@
 package com.solid.principles.exercises.isp;
 
-public class ScannerImpl implements ScannerInterface{
+public class ScannerServiceImpl implements ScannerService{
 
     @Override
 	public void scan(String document) {

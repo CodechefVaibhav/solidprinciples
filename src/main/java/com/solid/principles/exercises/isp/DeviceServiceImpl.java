@@ -1,6 +1,10 @@
 package com.solid.principles.exercises.isp;
 
-public class DeviceImpl implements DeviceInterface{
+/**
+ * @author praveen.krishna
+ */
+
+public class DeviceServiceImpl implements PrinterService, ScannerService{
 
     @Override
     public void print(String document) {

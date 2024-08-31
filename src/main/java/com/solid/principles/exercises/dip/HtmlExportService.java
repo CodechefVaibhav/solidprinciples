@@ -4,7 +4,7 @@ package com.solid.principles.exercises.dip;
  * @author praveen.krishna
  */
 
-public class HtmlExportor implements FileExporterInterface {
+public class HtmlExportService implements FileExportService {
     
     @Override
 	public void export(String data) {

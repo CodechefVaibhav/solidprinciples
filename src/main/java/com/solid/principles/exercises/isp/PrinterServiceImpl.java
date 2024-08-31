@@ -1,10 +1,10 @@
 package com.solid.principles.exercises.isp;
 
 /**
- * @author vaibhav.kashyap
+ * @author praveen.krishna
  */
 
-public class PrinterImpl implements PrinterInterface{
+public class PrinterServiceImpl implements PrinterService{
 
 	@Override
 	public void print(String document) {

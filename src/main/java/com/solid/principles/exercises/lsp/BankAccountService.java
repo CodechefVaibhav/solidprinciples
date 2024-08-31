@@ -1,6 +1,6 @@
 package com.solid.principles.exercises.lsp;
 
-public interface FixedAccountInterface {
+public interface BankAccountService {
 
     public void deposit(double amount);
 

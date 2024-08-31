@@ -4,7 +4,7 @@ package com.solid.principles.exercises.dip;
  * @author praveen.krishna
  */
 
-public class PDFExporter implements  FileExporterInterface{
+public class PDFExportService implements  FileExportService{
     
 	@Override
 	public void export(String data) {

@@ -1,6 +1,6 @@
 package com.solid.principles.exercises.ocp;
 
-public class StandardCostCalculate implements CostMangerInterface {
+public class StandardShippingService implements ShippingService {
 
     @Override
     public double calculateCost(double weight) {

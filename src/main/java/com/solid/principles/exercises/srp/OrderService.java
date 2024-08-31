@@ -20,7 +20,7 @@ public class OrderService {
     }
 
     public void processOrder(String orderId) {
-        paymentService.processPayment(orderId);
         invoiceService.generateInvoice(orderId);
+        paymentService.processPayment(orderId);
     }
 }
