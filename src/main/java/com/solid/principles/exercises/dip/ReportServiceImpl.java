@@ -1,19 +1,23 @@
 package com.solid.principles.exercises.dip;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.solid.principles.exercises.dip.FileExportServiceFactory.FileType;
 
 /**
  * @author praveen.krishna
  */
 
-public class ReportGenerator {
+public class ReportServiceImpl implements ReportService {
 
 	private final FileExportService fileExporter;
 
-	public ReportGenerator(FileType fileType) {
+	@Autowired
+	public ReportServiceImpl(FileType fileType) {
 		this.fileExporter = FileExportServiceFactory.createExporter(fileType);
 	}
 
+	@Override
 	public void generateReport(String data) {
 		fileExporter.export(data);
 	}

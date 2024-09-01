@@ -10,7 +10,7 @@ public class ReportClient {
 
         // Generate and export report in PDF(input from user)
 
-        ReportGenerator reportGenerator = new ReportGenerator(FileExportServiceFactory.FileType.PDF);
+        ReportServiceImpl reportGenerator = new ReportServiceImpl(FileExportServiceFactory.FileType.PDF);
         reportGenerator.generateReport("This is the report content");
 
     }

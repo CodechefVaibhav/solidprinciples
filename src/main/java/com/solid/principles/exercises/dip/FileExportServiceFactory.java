@@ -1,5 +1,8 @@
 package com.solid.principles.exercises.dip;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class FileExportServiceFactory {
 
     public static FileExportService createExporter(FileType type) {

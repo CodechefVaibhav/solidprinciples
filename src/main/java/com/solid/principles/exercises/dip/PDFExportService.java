@@ -1,9 +1,12 @@
 package com.solid.principles.exercises.dip;
 
+import org.springframework.stereotype.Service;
+
 /**
  * @author praveen.krishna
  */
 
+ @Service
 public class PDFExportService implements  FileExportService{
     
 	@Override
