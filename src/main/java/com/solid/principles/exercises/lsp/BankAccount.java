@@ -1,21 +1,21 @@
 package com.solid.principles.exercises.lsp;
 
 /**
- * @author vaibhav.kashyap
+ * @author shubhang21
  */
 
-public class BankAccount {
-	protected double balance;
+public class BankAccount extends Account implements WithdrawableAccount, DepositableAccount  {
 
-	public void deposit(double amount) {
-		balance += amount;
-	}
-
+	@Override
 	public void withdraw(double amount) {
 		balance -= amount;
 	}
 
-	public double getBalance() {
-		return balance;
+	@Override
+	public void deposit(double amount) {
+		balance += amount;
 	}
+	
+	
+	
 }
