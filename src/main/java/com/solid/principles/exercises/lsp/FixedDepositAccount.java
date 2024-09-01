@@ -1,13 +1,15 @@
 package com.solid.principles.exercises.lsp;
 
 /**
- * @author vaibhav.kashyap
+ * @author shubhang21
  */
 
-public class FixedDepositAccount extends BankAccount {
+public class FixedDepositAccount extends Account implements DepositableAccount  {
 
 	@Override
-	public void withdraw(double amount) {
-		throw new UnsupportedOperationException("Withdrawals are not allowed on fixed deposit accounts.");
+	public void deposit(double amount) {
+		balance += amount;
 	}
+
+	
 }
