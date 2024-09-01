@@ -1,5 +1,7 @@
 package com.solid.principles.isp.defective.service;
 
+import com.solid.principles.isp.defective.Interfaces.Printable;
+import com.solid.principles.isp.defective.Interfaces.Scanable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,7 +9,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class PhotocopierService implements PrinterService {
+public class PhotocopierService implements Printable, Scanable {
 
 	@Override
 	public void print(String document) {
@@ -18,9 +20,4 @@ public class PhotocopierService implements PrinterService {
 	public void scan(String document) {
 		System.out.println("Scanning document: " + document);
 	}
-
-	@Override
-	public void fax(String document) {
-		throw new UnsupportedOperationException("Fax not supported by Photocopier");
 	}
-}

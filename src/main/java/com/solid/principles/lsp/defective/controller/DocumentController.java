@@ -29,27 +29,18 @@ public class DocumentController {
 
 	@PostMapping("/add-content")
 	public String addContent(@RequestParam String content) {
-		textDocumentService.addContent(content);
-		return "Content added: " + textDocumentService.getContent();
+		textDocumentService.write(content);
+		return "Content added: " + textDocumentService.read();
 	}
 
-	@PostMapping("/add-content-read-only")
-	public String addContentToReadOnly(@RequestParam String content) {
-		try {
-			readOnlyDocumentService.addContent(content);
-			return "Content added to read-only document: " + readOnlyDocumentService.getContent();
-		} catch (UnsupportedOperationException e) {
-			return "Failed to add content: " + e.getMessage();
-		}
-	}
 
 	@GetMapping("/view-content")
 	public String viewContent() {
-		return textDocumentService.getContent();
+		return textDocumentService.read();
 	}
 
 	@GetMapping("/view-content-read-only")
 	public String viewReadOnlyContent() {
-		return readOnlyDocumentService.getContent();
+		return readOnlyDocumentService.read();
 	}
 }

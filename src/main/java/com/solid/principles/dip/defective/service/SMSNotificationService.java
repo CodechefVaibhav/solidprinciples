@@ -1,5 +1,6 @@
 package com.solid.principles.dip.defective.service;
 
+import com.solid.principles.dip.defective.components.NotificationSender;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,8 +8,8 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class SMSNotificationService {
-	public void sendSMS(String message) {
+public class SMSNotificationService implements NotificationSender {
+	public void sendNotification(String message) {
 		System.out.println("Sending SMS: " + message);
 	}
 }

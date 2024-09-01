@@ -1,5 +1,6 @@
 package com.solid.principles.ocp.defective.service;
 
+import com.solid.principles.ocp.defective.service.Interfaces.PaymentProcessor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class CreditCardPaymentProcessor {
+public class CreditCardPaymentProcessor implements PaymentProcessor {
 
 	public void processPayment() {
 		// Logic for processing credit card payment

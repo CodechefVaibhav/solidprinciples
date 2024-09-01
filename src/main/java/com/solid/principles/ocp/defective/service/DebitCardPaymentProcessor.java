@@ -1,5 +1,6 @@
 package com.solid.principles.ocp.defective.service;
 
+import com.solid.principles.ocp.defective.service.Interfaces.PaymentProcessor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,12 +8,10 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class DebitCardPaymentProcessor extends CreditCardPaymentProcessor {
+public class DebitCardPaymentProcessor implements PaymentProcessor {
 
-	@Override
 	public void processPayment() {
 		// Reusing credit card payment logic in debit card payment processing
-		super.processPayment(); // Calls processCreditCardPayment method from the parent class
 		System.out.println("Processing debit card payment");
 	}
 }
