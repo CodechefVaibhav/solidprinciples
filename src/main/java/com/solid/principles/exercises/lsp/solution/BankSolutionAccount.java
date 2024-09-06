@@ -4,16 +4,17 @@ package com.solid.principles.exercises.lsp.solution;
  * @author vaibhav.kashyap
  */
 
-public abstract class BankSolutionAccount {
-	protected double balance;
+// Base class for all accounts
+public abstract class BankAccountSolution {
+    protected double balance;
 
-	public void deposit(double amount) {
-		balance += amount;
-	}
+    public BankAccountSolution(double balance) {
+        this.balance = balance;
+    }
 
-	public abstract void withdraw(double amount);
+    public double getBalance() {
+        return balance;
+    }
 
-	public double getBalance() {
-		return balance;
-	}
+    public abstract void deposit(double amount);
 }
