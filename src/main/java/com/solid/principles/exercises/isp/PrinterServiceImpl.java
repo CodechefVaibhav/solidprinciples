@@ -1,18 +1,15 @@
 package com.solid.principles.exercises.isp;
 
 /**
- * @author vaibhav.kashyap
+ * @author praveen.krishna
  */
 
-public class PrinterPrblm implements Device {
+public class PrinterServiceImpl implements PrinterService{
 
 	@Override
 	public void print(String document) {
 		System.out.println("Printing: " + document);
 	}
 
-	@Override
-	public void scan(String document) {
-		// Not applicable for Printer
-	}
+	
 }
