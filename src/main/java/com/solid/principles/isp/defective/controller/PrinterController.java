@@ -41,13 +41,4 @@ public class PrinterController {
 		}
 	}
 
-	@PostMapping("/fax")
-	public String faxDocument(@RequestParam String document) {
-		try {
-			photocopierService.fax(document);
-			return "Document faxed: " + document;
-		} catch (UnsupportedOperationException e) {
-			return "Fax failed: " + e.getMessage();
-		}
-	}
 }

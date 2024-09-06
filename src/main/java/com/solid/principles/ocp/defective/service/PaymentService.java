@@ -1,6 +1,11 @@
 package com.solid.principles.ocp.defective.service;
 
+import com.solid.principles.ocp.defective.service.Interfaces.PaymentProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author vaibhav.kashyap
@@ -8,27 +13,28 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PaymentService {
+	private final Map<String, PaymentProcessor> paymentProcessors = new HashMap<>();
+
+	@Autowired
+	public PaymentService(CreditCardPaymentProcessor creditCardProcessor,
+						  DebitCardPaymentProcessor debitCardProcessor,
+						  PaypalPaymentProcessor payPalProcessor) {
+		paymentProcessors.put("CREDIT_CARD", creditCardProcessor);
+		paymentProcessors.put("DEBIT_CARD", debitCardProcessor);
+		paymentProcessors.put("PAYPAL", payPalProcessor);
+	}
+
 
 	public PaymentService() {
 
 	}
 
 	public void processPayment(String paymentType) {
-		if (paymentType.equals("CREDIT_CARD")) {
-			CreditCardPaymentProcessor processor = new CreditCardPaymentProcessor();
+		PaymentProcessor processor = paymentProcessors.get(paymentType);
+		if (processor != null) {
 			processor.processPayment();
-		} else if (paymentType.equals("DEBIT_CARD")) {
-			DebitCardPaymentProcessor processor = new DebitCardPaymentProcessor();
-			processor.processPayment();
-		} else if (paymentType.equals("PAYPAL")) {
-			processPayPalPayment();
 		} else {
 			throw new IllegalArgumentException("Unsupported payment type");
 		}
-	}
-
-	private void processPayPalPayment() {
-		// Logic for processing PayPal payment
-		System.out.println("Processing PayPal payment");
 	}
 }

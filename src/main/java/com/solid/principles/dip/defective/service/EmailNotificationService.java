@@ -1,5 +1,6 @@
 package com.solid.principles.dip.defective.service;
 
+import com.solid.principles.dip.defective.components.NotificationSender;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,8 +8,8 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class EmailNotificationService {
-	public void sendEmail(String message) {
+public class EmailNotificationService implements NotificationSender {
+	public void sendNotification(String message) {
 		System.out.println("Sending email: " + message);
 	}
 }

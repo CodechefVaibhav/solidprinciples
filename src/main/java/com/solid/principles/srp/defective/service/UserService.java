@@ -1,38 +1,40 @@
 package com.solid.principles.srp.defective.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @author vaibhav.kashyap
- */
-
-@Service("DefectiveUserService")
+@Service
 public class UserService {
 
-	public UserService() {
+	private final EmailValidationService emailValidationService;
+	private final PasswordValidationService passwordValidationService;
+	private final UserRepository userRepository;
+	private final EmailService emailService;
 
+	@Autowired
+	public UserService(EmailValidationService emailValidationService,
+					   PasswordValidationService passwordValidationService,
+					   UserRepository userRepository,
+					   EmailService emailService) {
+		this.emailValidationService = emailValidationService;
+		this.passwordValidationService = passwordValidationService;
+		this.userRepository = userRepository;
+		this.emailService = emailService;
 	}
 
-	// Validate email format
 	public boolean isValidEmail(String email) {
-		return email.contains("@");
+		return emailValidationService.isValidEmail(email);
 	}
 
-	// Validate password strength
 	public boolean isValidPassword(String password) {
-		return password.length() >= 8;
+		return passwordValidationService.isValidPassword(password);
 	}
 
-	// Save user to the database
 	public int saveToDatabase() {
-		// Logic to connect to a database and save the user
-		System.out.println("User saved to the database");
-		return 1;
+		return userRepository.saveToDatabase();
 	}
 
-	// Send a welcome email
 	public String sendWelcomeEmail(String email) {
-		// Logic to send an email
-		return "Welcome email sent to " + email;
+		return emailService.sendWelcomeEmail(email);
 	}
 }

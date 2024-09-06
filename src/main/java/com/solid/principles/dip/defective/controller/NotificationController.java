@@ -24,6 +24,7 @@ public class NotificationController {
 
 	@PostMapping("/send")
 	public String sendNotification(@RequestParam String type, @RequestParam String message) {
+		System.out.println("value of map : " + "skldjfl;kasdf");
 		notificationService.sendNotification(type, message);
 		return "Notification sent: " + message;
 	}

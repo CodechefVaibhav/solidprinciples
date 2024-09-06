@@ -1,5 +1,6 @@
 package com.solid.principles.isp.defective.service;
 
+import com.solid.principles.isp.defective.Interfaces.Printable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,20 +8,12 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class InkjetPrinterService implements PrinterService {
+public class InkjetPrinterService implements Printable {
 
 	@Override
 	public void print(String document) {
 		System.out.println("Printing document: " + document);
 	}
 
-	@Override
-	public void scan(String document) {
-		throw new UnsupportedOperationException("Scan not supported by Inkjet Printer");
 	}
 
-	@Override
-	public void fax(String document) {
-		throw new UnsupportedOperationException("Fax not supported by Inkjet Printer");
-	}
-}

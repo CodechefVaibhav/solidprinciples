@@ -1,5 +1,7 @@
 package com.solid.principles.lsp.defective.service;
 
+import com.solid.principles.lsp.defective.service.interfaces.DocumentService;
+import com.solid.principles.lsp.defective.service.interfaces.Writable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,7 +9,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class TextDocumentService {
+public class TextDocumentService implements DocumentService, Writable {
 
 	private String content;
 
@@ -19,14 +21,14 @@ public class TextDocumentService {
 		this.content = content;
 	}
 
-	public void addContent(String additionalContent) {
+	public void write(String additionalContent) {
 		if (content == null || content.isEmpty()) {
 			content = new String("");
 		}
 		content += additionalContent;
 	}
 
-	public String getContent() {
+	public String read() {
 		return content;
 	}
 }

@@ -1,5 +1,7 @@
 package com.solid.principles.lsp.defective.service;
 
+import com.solid.principles.lsp.defective.service.interfaces.DocumentService;
+import com.solid.principles.lsp.defective.service.interfaces.Readable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,18 +9,13 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class ReadOnlyDocumentService extends TextDocumentService {
-
+public class ReadOnlyDocumentService  implements DocumentService {
+	private String content;
 	public ReadOnlyDocumentService() {
 
 	}
-
-	public ReadOnlyDocumentService(String content) {
-		super(content);
+	public String read(){
+		return content;
 	}
 
-	@Override
-	public void addContent(String additionalContent) {
-		throw new UnsupportedOperationException("Cannot modify a read-only document");
-	}
 }
