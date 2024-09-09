@@ -1,5 +1,6 @@
 package com.solid.principles.exercises.ocp;
 
+import java.util.Map;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,12 +10,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class ShippingService {
 
+    private final Map<String, ShippingUtils> shippingUtils;
+
+    ShippingService(Map<String, ShippingUtils> shippingUtils) {
+        this.shippingUtils = shippingUtils;
+    }
+
     public double calculateShippingCost(String method, double weight) {
-        if ("STANDARD".equalsIgnoreCase(method)) {
-            return weight * 1.0;
-        } else if ("EXPRESS".equalsIgnoreCase(method)) {
-            return weight * 2.0;
+        if(shippingUtils.containsKey(method)){
+            return shippingUtils.get(method).calculateShippingCost(weight);
+        } else {
+            throw new IllegalArgumentException("Unknown shipping method: " + method);
         }
-        return 0;
     }
 }

@@ -1,11 +1,9 @@
 package com.solid.principles.exercises.isp;
 
 /**
- * @author vaibhav.kashyap
+ * @author yash.agarwal
  */
 
-public interface Device {
+public interface Printer {
 	void print(String document);
-
-	void scan(String document);
 }
